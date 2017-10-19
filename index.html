@@ -4,8 +4,25 @@
 	<title>Crypto Currency Helper</title>
 </head>
 <body>
+<script type="text/javascript" src="assets/js/require_min.js" ></script>
+<script type="text/javascript" src="assets/js/converter.js" ></script>
 <p>
 	Hello People!!!
 </p>
+<script type="text/javascript">
+	require(['converter'], function (converter) {
+		console.log(converter.consult( 
+			[{price: 16.3, count: 61.4}, {price: 16.13, count : 124}, {price: 15, count: 66.7}, {price: 14, count: 71.5}]
+			, 
+			[{price: 18, count: 323.6}]
+		))
+		console.log(converter.consult(
+			[{price: 356100, count: 0.045}, {price: 352000, count : 0.2684}, {price: 351900, count: 0.1}]
+			, 
+			[{price: 360000, count: 0.4134}]
+		))
+		console.log('My total Cost is ' , converter.spent([{price: 356100, count: 0.045}, {price: 352000, count : 0.2684}, {price: 351900, count: 0.1}]))
+	})
+</script>
 </body>
 </html>
