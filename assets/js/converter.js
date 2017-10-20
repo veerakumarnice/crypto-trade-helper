@@ -16,7 +16,7 @@ define('converter', function () {
 		var costPrice = totalMoney(costList)
 		var sellingPrice = totalMoney(sellingList)
 		var difference = sellingPrice - (costPrice + (costPrice * BUYER_FEE) )
-		console.log('total cost', costPrice + (costPrice * BUYER_FEE))
+		// console.log('total cost', costPrice + (costPrice * BUYER_FEE))
 		console.log( difference , isProfit(difference))
 	}
 
