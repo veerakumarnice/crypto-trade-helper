@@ -1,0 +1,15 @@
+.group-header h4 {
+	display: inline-block;
+}
+
+.group-body {
+	padding-left: 20px;
+}
+
+.hide {
+	display: none;
+}
+
+[disable-body] .group-body {
+	display: none;
+}
