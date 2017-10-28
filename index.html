@@ -16,7 +16,11 @@
 	This is intended to provide a set of online crypto currency helper tools.
 	<h3>Investment Calculator</h3>
 	<form id="investment-calculator" oninput="investment.value = parseFloat(costprice.value) * parseFloat(volume.value) * (1 + parseFloat(fee.value))">
-		<label for="costprice">Cost Price</label><input type="number" name="costprice" value="0" min="0">
+		<div>
+			<!-- <label for="limit-enabled">Enable Limit</label> --><input type="checkbox" name="limit-enabled">
+			<label for="limit-amount">Limit Amount</label><input type="number" name="limit-amount" value="0" min="0" depends="investment-calculator.limit-enabled">
+		</div>
+		<label for="costprice">Cost Price</label><input type="number" name="costprice" value="0" min="0" >
 		<label for="volume">Volume</label><input type="number" name="volume" value="0" min="0">
 		<label for="fee">Fee %</label><input type="number" name="fee" value="0.0025" min="0" max="100">
 		<output name="investment" type="number">0</output>
@@ -55,8 +59,9 @@
 	</form>
 </p>
 <script type="text/javascript">
-require(['profit_calc'], function (profit_calc) {
+require(['profit_calc', 'depends'], function (profit_calc, depends) {
 	profit_calc.init(document.getElementById('profit-calculator'))
+	depends.start()
 })
 </script>
 </body>
